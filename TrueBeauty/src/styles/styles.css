@@ -19,7 +19,6 @@
   --color-shadow: rgba(159, 95, 84, 0.18);
 
   --font-title: "Playfair Display", serif;
-
   --font-text: "Poppins", sans-serif;
 
   --radius-sm: 8px;
@@ -32,11 +31,14 @@
   --spacing-xl: 32px;
 
   --shadow-card: 0 4px 15px var(--color-shadow);
-
   --shadow-hover: 0 8px 25px rgba(159, 95, 84, 0.28);
 
   --transition: 0.3s ease;
 }
+
+/* =========================
+   RESET GENERAL
+========================= */
 
 * {
   margin: 0;
@@ -50,11 +52,8 @@ html {
 
 body {
   font-family: var(--font-text);
-
   background: var(--color-bg);
-
   color: var(--color-text);
-
   min-width: 320px;
 }
 
@@ -85,7 +84,6 @@ button {
 
 .app-shell {
   min-height: 100vh;
-
   display: flex;
   flex-direction: column;
 }
@@ -94,12 +92,47 @@ button {
   flex: 1;
 }
 
-/* NAVBAR */
+/* =========================
+   TITULOS GENERALES
+========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+  color: var(--color-primary-dark);
+  opacity: 1;
+  visibility: visible;
+}
+
+h1 {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* =========================
+   NAVBAR
+========================= */
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
+
+  width: 100%;
 
   background: var(--color-bg-secondary);
 
@@ -196,6 +229,8 @@ button {
   align-items: center;
 
   gap: 6px;
+
+  cursor: pointer;
 }
 
 .admin-dropdown {
@@ -205,7 +240,7 @@ button {
 
   right: 0;
 
-  min-width: 170px;
+  min-width: 160px;
 
   background: var(--color-white);
 
@@ -216,12 +251,16 @@ button {
   box-shadow: var(--shadow-card);
 
   overflow: hidden;
+
+  z-index: 1200;
 }
 
 .admin-dropdown a {
   display: block;
 
   padding: 11px 14px;
+
+  color: var(--color-text);
 }
 
 .admin-dropdown a:hover {
@@ -238,6 +277,8 @@ button {
 
 .nav-actions > span {
   color: var(--color-primary-dark);
+
+  font-size: 18px;
 }
 
 .btn-login,
@@ -264,22 +305,14 @@ button {
   background: var(--color-primary-dark);
 }
 
+/* ya no usamos hamburguesa */
 .menu-toggle {
-  display: none;
-
-  width: 42px;
-  height: 42px;
-
-  border: 0;
-
-  border-radius: var(--radius-sm);
-
-  background: var(--color-primary);
-
-  color: white;
+  display: none !important;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 .site-footer {
   margin-top: 48px;
@@ -317,6 +350,8 @@ button {
   font-size: 24px;
 
   margin-bottom: 4px;
+
+  color: var(--color-white);
 }
 
 .footer-column a,
@@ -346,7 +381,9 @@ button {
   font-size: 13px;
 }
 
-/* LOADER */
+/* =========================
+   LOADER
+========================= */
 
 .loader-box {
   min-height: 110px;
@@ -380,6 +417,10 @@ button {
     transform: rotate(360deg);
   }
 }
+
+/* =========================
+   MENSAJES
+========================= */
 
 .status-message {
   margin: 14px 0;
@@ -431,6 +472,10 @@ button {
   font-weight: 600;
 }
 
+/* =========================
+   404
+========================= */
+
 .not-found {
   max-width: 700px;
 
@@ -451,70 +496,99 @@ button {
   margin: 12px 0 24px;
 }
 
-@media (max-width: 900px) {
-  .menu-toggle {
-    display: inline-grid;
+/* =========================
+   TABLET
+========================= */
 
-    place-items: center;
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 12px 14px;
   }
 
-  .navbar {
-    flex-wrap: wrap;
+  .nav-logo {
+    justify-content: center;
+
+    font-size: 22px;
+  }
+
+  .nav-logo img {
+    width: 48px;
+    height: 48px;
   }
 
   .nav-collapse {
-    display: none;
-
     width: 100%;
+
+    display: flex;
 
     flex-direction: column;
 
-    align-items: stretch;
+    align-items: center;
 
-    gap: 14px;
+    justify-content: center;
 
-    padding-top: 12px;
-  }
-
-  .nav-collapse.open {
-    display: flex;
+    gap: 12px;
   }
 
   .nav-links {
-    flex-direction: column;
+    width: 100%;
 
-    align-items: stretch;
+    display: flex;
 
-    gap: 0;
+    flex-direction: row;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px 16px;
   }
 
   .nav-links li {
-    border-bottom: 1px solid var(--color-border);
+    border: 0;
   }
 
   .nav-link,
   .admin-menu-button {
-    width: 100%;
+    width: auto;
 
-    padding: 12px 0;
+    padding: 4px 0;
 
-    text-align: left;
+    font-size: 15px;
+
+    text-align: center;
+  }
+
+  .admin-menu-button {
+    justify-content: center;
   }
 
   .admin-dropdown {
-    position: static;
+    top: 30px;
 
-    margin-bottom: 8px;
+    left: 50%;
 
-    box-shadow: none;
+    right: auto;
+
+    transform: translateX(-50%);
   }
 
   .nav-actions {
-    justify-content: flex-start;
-  }
-}
+    width: 100%;
 
-@media (max-width: 700px) {
+    justify-content: center;
+
+    gap: 14px;
+  }
+
   .footer-content {
     grid-template-columns: 1fr;
 
@@ -527,29 +601,84 @@ button {
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-title);
-  color: var(--color-primary-dark);
-  opacity: 1;
-  visibility: visible;
-}
+/* =========================
+   CELULAR
+========================= */
 
-h1 {
-  font-size: 42px;
-  font-weight: 700;
-}
+@media (max-width: 480px) {
+  .site-header {
+    position: relative;
+  }
 
-h2 {
-  font-size: 32px;
-  font-weight: 600;
-}
+  .navbar {
+    padding: 12px 10px;
 
-h3 {
-  font-size: 22px;
-  font-weight: 600;
+    gap: 8px;
+  }
+
+  .nav-logo {
+    font-size: 21px;
+
+    gap: 8px;
+  }
+
+  .nav-logo img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .nav-collapse {
+    gap: 10px;
+  }
+
+  .nav-links {
+    max-width: 330px;
+
+    margin: 0 auto;
+
+    gap: 8px 13px;
+  }
+
+  .nav-link,
+  .admin-menu-button {
+    font-size: 14px;
+
+    padding: 2px 0;
+  }
+
+  .admin-menu-button {
+    gap: 4px;
+  }
+
+  .nav-actions {
+    gap: 16px;
+  }
+
+  .nav-actions > span {
+    font-size: 17px;
+  }
+
+  .btn-login {
+    padding: 8px 14px;
+
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 21px;
+  }
+
+  .site-footer {
+    margin-top: 32px;
+
+    padding: 32px 16px 16px;
+  }
 }

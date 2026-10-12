@@ -1,30 +1,21 @@
 .admin-page {
   max-width: 1200px;
-
   margin: 0 auto;
-
   padding: var(--spacing-xl);
 }
 
 .admin-title {
   background: white;
-
   padding: var(--spacing-xl);
-
   border-radius: var(--radius-md);
-
   box-shadow: var(--shadow-card);
-
   text-align: center;
-
   margin-bottom: var(--spacing-xl);
 }
 
 .admin-title h1 {
   font: 600 42px var(--font-title);
-
   color: var(--color-primary-dark);
-
   margin-bottom: 8px;
 }
 
@@ -32,37 +23,31 @@
   color: var(--color-text-light);
 }
 
+
+
 .admin-section {
   background: white;
-
   padding: var(--spacing-xl);
-
   border-radius: var(--radius-md);
-
   box-shadow: var(--shadow-card);
-
   margin-bottom: var(--spacing-xl);
-
   scroll-margin-top: 110px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .admin-section h2 {
   font: 600 30px var(--font-title);
-
   color: var(--color-primary-dark);
-
   margin-bottom: 18px;
+  word-break: break-word;
 }
 
 .admin-section-heading {
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   gap: 12px;
-
   margin-bottom: 16px;
 }
 
@@ -70,61 +55,50 @@
   margin-bottom: 0;
 }
 
+
 .table-container {
   width: 100%;
-
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .products-table {
   width: 100%;
-
-  min-width: 950px;
-
   border-collapse: collapse;
 }
 
 .products-table th,
 .products-table td {
   padding: 12px;
-
   border-bottom: 1px solid var(--color-border);
-
   text-align: left;
-
   vertical-align: middle;
 }
 
 .products-table th {
   background: var(--color-bg-secondary);
-
   color: var(--color-primary-dark);
 }
 
 .products-table img {
   width: 64px;
   height: 64px;
-
   border-radius: var(--radius-sm);
-
   object-fit: cover;
-
   background: white;
 }
 
 .description-cell {
   max-width: 260px;
-
   color: var(--color-text-light);
 }
 
 .actions {
   display: flex;
-
   gap: 8px;
-
   flex-wrap: wrap;
 }
+
 
 .edit-btn,
 .delete-btn,
@@ -132,18 +106,15 @@
 .cancel-btn,
 .secondary-btn {
   border: 0;
-
   border-radius: var(--radius-sm);
-
   padding: 9px 12px;
-
   font-weight: 600;
+  transition: var(--transition);
 }
 
 .edit-btn,
 .save-btn {
   background: var(--color-primary);
-
   color: white;
 }
 
@@ -154,7 +125,6 @@
 
 .delete-btn {
   background: #b94b4b;
-
   color: white;
 }
 
@@ -165,24 +135,23 @@
 .cancel-btn,
 .secondary-btn {
   background: var(--color-bg-secondary);
-
   color: var(--color-primary-dark);
 }
 
+
+
 .admin-form {
   display: flex;
-
   flex-direction: column;
-
   gap: 14px;
+  width: 100%;
 }
 
 .admin-form .form-group {
   display: flex;
-
   flex-direction: column;
-
   gap: 6px;
+  width: 100%;
 }
 
 .admin-form label {
@@ -193,19 +162,20 @@
 .admin-form textarea,
 .admin-form select {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
 
   padding: 12px;
 
   border: 1px solid var(--color-border);
-
   border-radius: var(--radius-sm);
 
   background: white;
+  color: var(--color-text);
 }
 
 .admin-form textarea {
   min-height: 120px;
-
   resize: vertical;
 }
 
@@ -213,37 +183,204 @@
 .admin-form textarea:focus,
 .admin-form select:focus {
   outline: 2px solid var(--color-primary-light);
-
   border-color: var(--color-primary);
 }
 
 .form-actions {
   display: flex;
-
   gap: 10px;
-
   flex-wrap: wrap;
-
   margin-top: 4px;
 }
 
-@media (max-width: 700px) {
+
+@media (max-width: 900px) {
   .admin-page {
-    padding: 24px 16px;
+    padding: 24px 18px;
   }
 
-  .admin-title,
-  .admin-section {
-    padding: 20px;
+  .admin-title {
+    padding: 24px;
   }
 
   .admin-title h1 {
-    font-size: 34px;
+    font-size: 36px;
+  }
+
+  .admin-section {
+    padding: 24px;
   }
 
   .admin-section-heading {
     align-items: stretch;
+    flex-direction: column;
+  }
+
+  .secondary-btn {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .admin-page {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 18px 12px;
+
+    overflow-x: hidden;
+  }
+
+  .admin-title {
+    padding: 20px 16px;
+
+    border-radius: 12px;
+
+    margin-bottom: 18px;
+  }
+
+  .admin-title h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .admin-title p {
+    font-size: 14px;
+  }
+
+  .admin-section {
+    width: 100%;
+
+    padding: 18px 14px;
+
+    border-radius: 12px;
+
+    margin-bottom: 18px;
+
+    overflow: visible;
+  }
+
+  .admin-section h2 {
+    font-size: 27px;
+    line-height: 1.25;
+  }
+
+  .admin-section-heading {
+    gap: 10px;
+  }
+
+  
+  .table-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border-radius: var(--radius-sm);
+  }
+
+  .products-table {
+    min-width: 780px;
+    font-size: 13px;
+  }
+
+  .products-table th,
+  .products-table td {
+    padding: 9px;
+  }
+
+  .products-table img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .description-cell {
+    max-width: 180px;
+  }
+
+  .actions {
+    flex-direction: column;
+
+    min-width: 90px;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    width: 100%;
+  }
+
+  /* FORMULARIO CELULAR */
+
+  .admin-form {
+    width: 100%;
+  }
+
+  .admin-form .form-group {
+    width: 100%;
+  }
+
+  .admin-form label {
+    font-size: 15px;
+  }
+
+  .admin-form input,
+  .admin-form textarea,
+  .admin-form select {
+    width: 100%;
+
+    max-width: 100%;
+
+    font-size: 16px;
+
+    padding: 12px;
+
+    box-sizing: border-box;
+  }
+
+  .admin-form textarea {
+    min-height: 130px;
+  }
+
+  .form-actions {
+    width: 100%;
 
     flex-direction: column;
+  }
+
+  .save-btn,
+  .cancel-btn {
+    width: 100%;
+
+    padding: 12px;
+  }
+}
+
+
+
+@media (max-width: 380px) {
+  .admin-page {
+    padding: 14px 8px;
+  }
+
+  .admin-title {
+    padding: 18px 12px;
+  }
+
+  .admin-title h1 {
+    font-size: 27px;
+  }
+
+  .admin-section {
+    padding: 16px 10px;
+  }
+
+  .admin-section h2 {
+    font-size: 24px;
+  }
+
+  .admin-form input,
+  .admin-form textarea,
+  .admin-form select {
+    padding: 11px;
   }
 }
